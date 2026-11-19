@@ -2,7 +2,7 @@
 
 Application personnelle, à un seul utilisateur.
 
-Un outil privé qu'une personne a construit pour elle-même. Il réunit ses propres mesures de sommeil, de récupération et d'entraînement avec son agenda et sa liste de tâches, dans un résumé quotidien.
+Un tableau de bord privé qu'une personne a construit pour elle-même. Il affiche sur une seule page ses propres mesures de sommeil, de récupération et d'entraînement, à côté de son agenda et de sa liste de tâches.
 
 - [Présentation](#presentation)
 - [Politique de confidentialité](#confidentialite)
@@ -13,7 +13,7 @@ Un outil privé qu'une personne a construit pour elle-même. Il réunit ses prop
 
 Dashboard-humbert est exploité par son propriétaire, pour lui seul. Il n'a aucun autre utilisateur, n'est pas proposé au public et n'est pas un service commercial. Personne ne peut s'y inscrire.
 
-Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et en tire un court résumé quotidien et des réponses à ses propres questions : comment il a dormi, ou si la journée se prête à une séance intense.
+Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et les affiche sur une page que lui seul consulte : sa dernière nuit, ses dernières séances, ses rendez-vous et ses tâches du jour.
 
 ### Ce qu'il lit chez Oura
 
@@ -43,26 +43,22 @@ Les types de données Oura listés plus haut, lus par l'API d'Oura après que le
 
 ### Usage des données
 
-Uniquement pour produire le résumé quotidien du propriétaire et répondre à ses propres questions sur son sommeil, sa récupération et son entraînement.
+Uniquement pour les afficher au propriétaire dans son tableau de bord : sa dernière nuit, sa récupération, et quelques moyennes calculées sur les semaines précédentes pour situer la nuit.
 
-Ces textes sont rédigés par le logiciel d'assistant personnel du propriétaire, qui s'appuie sur un modèle de langage (IA) exploité par un prestataire tiers. Quand un résumé ou une réponse est produit, les mesures nécessaires sont transmises à ce prestataire pour que le texte soit généré.
-
-- L'application n'utilise pas ces données pour entraîner ou ajuster un modèle.
-- Elles ne sont ni vendues, ni utilisées à des fins publicitaires, ni croisées avec des données d'autres personnes.
+Elles ne sont ni vendues, ni utilisées à des fins publicitaires, ni croisées avec des données d'autres personnes.
 
 ### Conservation
 
 - Les identifiants d'accès sont conservés sur un serveur privé contrôlé par le propriétaire, lisibles par le seul compte de l'application.
-- Les mesures Oura sont relues au moment où un résumé est nécessaire. L'application n'en tient pas de base séparée.
-- Les résumés et les réponses envoyés au propriétaire, qui peuvent citer des mesures, restent dans son historique de messages privé et dans ses sauvegardes pendant 24 mois au plus.
+- Les mesures Oura sont relues à chaque affichage du tableau de bord. L'application n'en tient ni base ni historique : chaque page affichée remplace la précédente.
 
 ### Destinataires
 
-Personne d'autre que le propriétaire, en dehors des prestataires nécessaires au fonctionnement de l'outil pour lui : le prestataire d'IA décrit plus haut, l'hébergeur du serveur privé et le service de messagerie qui lui remet le résumé.
+Personne d'autre que le propriétaire. Le serveur privé qui fabrique la page est loué à un hébergeur.
 
 ### Contrôle et suppression
 
-Le propriétaire peut retirer l'autorisation à tout moment depuis son compte Oura, ou supprimer les identifiants du serveur. Supprimer son historique de messages supprime les résumés.
+Le propriétaire peut retirer l'autorisation à tout moment depuis son compte Oura, ou supprimer les identifiants du serveur. Il n'y a pas d'autre copie à effacer que la dernière page affichée, sur son ordinateur.
 
 ### Contact
 
@@ -83,11 +79,11 @@ C'est un projet personnel indépendant. Il n'est ni affilié à Oura ou aux autr
 
 ### Pas un avis médical
 
-Les résumés sont donnés à titre d'information. L'application n'est pas un dispositif médical et ne pose aucun diagnostic. Les décisions de santé reviennent au propriétaire et, au besoin, à un médecin.
+Le tableau de bord affiche des mesures à titre d'information. L'application n'est pas un dispositif médical et ne pose aucun diagnostic. Les décisions de santé reviennent au propriétaire et, au besoin, à un médecin.
 
 ### Sans garantie
 
-L'application est fournie en l'état. Ses résumés peuvent être incomplets, tardifs ou faux, et elle cesse de fonctionner quand un service dont elle dépend est indisponible ou retire son accès.
+L'application est fournie en l'état. Ce qu'elle affiche peut être incomplet, tardif ou faux, et elle cesse de fonctionner quand un service dont elle dépend est indisponible ou retire son accès.
 
 ### Services tiers
 
