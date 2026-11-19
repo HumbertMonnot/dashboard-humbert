@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dashboard-humbert</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f8f8;
+    --surface: #ffffff;
+    --fg: #15242a;
+    --muted: #55686f;
+    --rule: #d6e0e1;
+    --accent: #0d6a67;
+    --accent-soft: #e2f0ef;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f181b;
+      --surface: #152125;
+      --fg: #e4ecee;
+      --muted: #98abb1;
+      --rule: #26363b;
+      --accent: #62c7bf;
+      --accent-soft: #17302f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 40px 16px 72px;
+  }
+  .page {
+    max-width: 42rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  h1 { font-size: 2rem; line-height: 1.15; font-weight: 650; }
+  h2 { font-size: 1.4rem; line-height: 1.25; font-weight: 650; }
+  h3 { font-size: 1rem; line-height: 1.4; font-weight: 650; }
+  p { margin: 0; }
+  .lede { font-size: 1.05rem; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  nav a:hover { text-decoration: underline; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scroll-margin-top: 24px;
+  }
+  section + section { padding-top: 40px; border-top: 1px solid var(--rule); }
+  .updated { font-size: 0.85rem; color: var(--muted); }
+  .clause { display: flex; flex-direction: column; gap: 6px; }
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: 0; }
+  th {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .yes { color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .no { color: var(--muted); white-space: nowrap; }
+  footer {
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <span class="kicker">Application personnelle · un seul utilisateur</span>
+    <h1>Dashboard-humbert</h1>
+    <p class="lede">Un outil privé qu'une personne a construit pour elle-même. Il réunit ses propres mesures de sommeil, de récupération et d'entraînement avec son agenda et sa liste de tâches, dans un résumé quotidien.</p>
+    <nav aria-label="Rubriques">
+      <a href="#presentation">Présentation</a>
+      <a href="#confidentialite">Politique de confidentialité</a>
+      <a href="#conditions">Conditions d'utilisation</a>
+    </nav>
+  </header>
+
+  <section id="presentation">
+    <h2>Présentation</h2>
+    <p>Dashboard-humbert est exploité par son propriétaire, pour lui seul. Il n'a aucun autre utilisateur, n'est pas proposé au public et n'est pas un service commercial. Personne ne peut s'y inscrire.</p>
+    <p>Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et en tire un court résumé quotidien et des réponses à ses propres questions : comment il a dormi, ou si la journée se prête à une séance intense.</p>
+    <h3>Ce qu'il lit chez Oura</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Type de données Oura</th><th>Accès</th><th>Usage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Daily (sommeil, forme, activité)</td><td class="yes">Lecture</td><td>La dernière nuit, la récupération et la tendance des dernières semaines</td></tr>
+          <tr><td>Workout</td><td class="yes">Lecture</td><td>Les séances détectées par la bague</td></tr>
+          <tr><td>SpO2</td><td class="yes">Lecture</td><td>La moyenne d'oxygénation de la nuit</td></tr>
+          <tr><td>Stress</td><td class="yes">Lecture</td><td>Le bilan de stress et de récupération de la journée</td></tr>
+          <tr><td>Email, Personal</td><td class="no">Non demandé</td><td>—</td></tr>
+          <tr><td>Heartrate, Tag, Session, Ring configuration, Heart health</td><td class="no">Non demandé</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>L'application n'écrit jamais rien chez Oura.</p>
+  </section>
+
+  <section id="confidentialite">
+    <h2>Politique de confidentialité</h2>
+    <p class="updated">Dernière mise à jour : 19 novembre 2026</p>
+
+    <div class="clause">
+      <h3>Qui est concerné</h3>
+      <p>Une seule personne : le propriétaire, qui est aussi l'exploitant et l'unique utilisateur. L'application ne collecte aucune donnée sur qui que ce soit d'autre.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Données consultées</h3>
+      <p>Les types de données Oura listés plus haut, lus par l'API d'Oura après que le propriétaire a autorisé l'application depuis son propre compte Oura. L'accès est en lecture seule et limité aux types qu'il a cochés.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Usage des données</h3>
+      <p>Uniquement pour produire le résumé quotidien du propriétaire et répondre à ses propres questions sur son sommeil, sa récupération et son entraînement.</p>
+      <p>Ces textes sont rédigés par le logiciel d'assistant personnel du propriétaire, qui s'appuie sur un modèle de langage (IA) exploité par un prestataire tiers. Quand un résumé ou une réponse est produit, les mesures nécessaires sont transmises à ce prestataire pour que le texte soit généré.</p>
+      <ul>
+        <li>L'application n'utilise pas ces données pour entraîner ou ajuster un modèle.</li>
+        <li>Elles ne sont ni vendues, ni utilisées à des fins publicitaires, ni croisées avec des données d'autres personnes.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>Conservation</h3>
+      <ul>
+        <li>Les identifiants d'accès sont conservés sur un serveur privé contrôlé par le propriétaire, lisibles par le seul compte de l'application.</li>
+        <li>Les mesures Oura sont relues au moment où un résumé est nécessaire. L'application n'en tient pas de base séparée.</li>
+        <li>Les résumés et les réponses envoyés au propriétaire, qui peuvent citer des mesures, restent dans son historique de messages privé et dans ses sauvegardes pendant 24 mois au plus.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>Destinataires</h3>
+      <p>Personne d'autre que le propriétaire, en dehors des prestataires nécessaires au fonctionnement de l'outil pour lui : le prestataire d'IA décrit plus haut, l'hébergeur du serveur privé et le service de messagerie qui lui remet le résumé.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Contrôle et suppression</h3>
+      <p>Le propriétaire peut retirer l'autorisation à tout moment depuis son compte Oura, ou supprimer les identifiants du serveur. Supprimer son historique de messages supprime les résumés.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Contact</h3>
+      <p>L'adresse de contact enregistrée avec cette application chez Oura.</p>
+    </div>
+  </section>
+
+  <section id="conditions">
+    <h2>Conditions d'utilisation</h2>
+    <p class="updated">Dernière mise à jour : 19 novembre 2026</p>
+
+    <div class="clause">
+      <h3>Usage strictement personnel</h3>
+      <p>Dashboard-humbert n'est utilisé que par son propriétaire. Aucun compte n'est créé pour d'autres personnes, et personne d'autre n'a accès à l'outil ni à ses données.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Projet indépendant</h3>
+      <p>C'est un projet personnel indépendant. Il n'est ni affilié à Oura ou aux autres services qu'il consulte, ni approuvé ou soutenu par eux. Leurs noms et leurs marques appartiennent à leurs propriétaires.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Pas un avis médical</h3>
+      <p>Les résumés sont donnés à titre d'information. L'application n'est pas un dispositif médical et ne pose aucun diagnostic. Les décisions de santé reviennent au propriétaire et, au besoin, à un médecin.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Sans garantie</h3>
+      <p>L'application est fournie en l'état. Ses résumés peuvent être incomplets, tardifs ou faux, et elle cesse de fonctionner quand un service dont elle dépend est indisponible ou retire son accès.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Services tiers</h3>
+      <p>Les données lues dans un service tiers restent soumises aux conditions de ce service. Le propriétaire est responsable de l'usage qu'il en fait.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Arrêt</h3>
+      <p>Le propriétaire peut arrêter à tout moment, en retirant l'autorisation dans le compte concerné et en supprimant les identifiants du serveur.</p>
+    </div>
+  </section>
+
+  <footer>Dashboard-humbert · application personnelle, pas un service public.</footer>
+</div>
+</body>
+</html>
