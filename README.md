@@ -33,8 +33,8 @@ Il lit les données de son propriétaire dans les services qu'il utilise, en lec
 | Workout | Lecture | Les séances détectées par la bague |
 | SpO2 | Lecture | La moyenne d'oxygénation de la nuit |
 | Stress | Lecture | Le bilan de stress et de récupération de la journée |
-| Email, Personal | Non demandé | |
-| Heartrate, Tag, Session, Ring configuration, Heart health | Non demandé | |
+| Heartrate, Heart health, Session, Tag, Ring configuration, Personal | Lecture | Autorisés par le propriétaire pour de prochaines rubriques ; pas encore affichés |
+| Email | Non demandé | |
 
 L'application n'écrit jamais rien chez Oura.
 
