@@ -130,7 +130,7 @@
   <header>
     <span class="kicker">Application personnelle · un seul utilisateur</span>
     <h1>Dashboard-humbert</h1>
-    <p class="lede">Un tableau de bord privé qu'une personne a construit pour elle-même. Il affiche sur une seule page ses propres mesures de sommeil, de récupération et d'entraînement, à côté de son agenda et de sa liste de tâches.</p>
+    <p class="lede">Un tableau de bord privé qu'une personne a construit pour elle-même. Il affiche sur une seule page ses propres mesures de sommeil, de récupération et d'entraînement, à côté de son agenda, de sa liste de tâches et de ses pull requests.</p>
     <nav aria-label="Rubriques">
       <a href="#presentation">Présentation</a>
       <a href="#confidentialite">Politique de confidentialité</a>
@@ -141,7 +141,22 @@
   <section id="presentation">
     <h2>Présentation</h2>
     <p>Dashboard-humbert est exploité par son propriétaire, pour lui seul. Il n'a aucun autre utilisateur, n'est pas proposé au public et n'est pas un service commercial. Personne ne peut s'y inscrire.</p>
-    <p>Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et les affiche sur une page que lui seul consulte : sa dernière nuit, ses dernières séances, ses rendez-vous et ses tâches du jour.</p>
+    <p>Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et les affiche sur une page que lui seul consulte.</p>
+    <h3>Ce que le tableau de bord affiche</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Rubrique</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dernière nuit et récupération</td><td>Bague Oura</td></tr>
+          <tr><td>Dernière séance d'entraînement</td><td>Garmin Connect</td></tr>
+          <tr><td>Rendez-vous du jour</td><td>Google Agenda</td></tr>
+          <tr><td>Tâches</td><td>La liste de tâches du propriétaire</td></tr>
+          <tr><td>Pull requests ouvertes</td><td>GitHub</td></tr>
+        </tbody>
+      </table>
+    </div>
     <h3>Ce qu'il lit chez Oura</h3>
     <div class="table-wrap">
       <table>
@@ -173,6 +188,7 @@
     <div class="clause">
       <h3>Données consultées</h3>
       <p>Les types de données Oura listés plus haut, lus par l'API d'Oura après que le propriétaire a autorisé l'application depuis son propre compte Oura. L'accès est en lecture seule et limité aux types qu'il a cochés.</p>
+      <p>Le tableau de bord affiche aussi des données que le propriétaire tient dans d'autres services : Garmin Connect, Google Agenda, GitHub et sa liste de tâches. Elles sont lues de la même façon, en lecture seule et pour lui seul.</p>
     </div>
 
     <div class="clause">

@@ -2,7 +2,7 @@
 
 Application personnelle, à un seul utilisateur.
 
-Un tableau de bord privé qu'une personne a construit pour elle-même. Il affiche sur une seule page ses propres mesures de sommeil, de récupération et d'entraînement, à côté de son agenda et de sa liste de tâches.
+Un tableau de bord privé qu'une personne a construit pour elle-même. Il affiche sur une seule page ses propres mesures de sommeil, de récupération et d'entraînement, à côté de son agenda, de sa liste de tâches et de ses pull requests.
 
 - [Présentation](#presentation)
 - [Politique de confidentialité](#confidentialite)
@@ -13,7 +13,17 @@ Un tableau de bord privé qu'une personne a construit pour elle-même. Il affich
 
 Dashboard-humbert est exploité par son propriétaire, pour lui seul. Il n'a aucun autre utilisateur, n'est pas proposé au public et n'est pas un service commercial. Personne ne peut s'y inscrire.
 
-Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et les affiche sur une page que lui seul consulte : sa dernière nuit, ses dernières séances, ses rendez-vous et ses tâches du jour.
+Il lit les données de son propriétaire dans les services qu'il utilise, en lecture seule, et les affiche sur une page que lui seul consulte.
+
+### Ce que le tableau de bord affiche
+
+| Rubrique | Source |
+|---|---|
+| Dernière nuit et récupération | Bague Oura |
+| Dernière séance d'entraînement | Garmin Connect |
+| Rendez-vous du jour | Google Agenda |
+| Tâches | La liste de tâches du propriétaire |
+| Pull requests ouvertes | GitHub |
 
 ### Ce qu'il lit chez Oura
 
@@ -40,6 +50,8 @@ Une seule personne : le propriétaire, qui est aussi l'exploitant et l'unique ut
 ### Données consultées
 
 Les types de données Oura listés plus haut, lus par l'API d'Oura après que le propriétaire a autorisé l'application depuis son propre compte Oura. L'accès est en lecture seule et limité aux types qu'il a cochés.
+
+Le tableau de bord affiche aussi des données que le propriétaire tient dans d'autres services : Garmin Connect, Google Agenda, GitHub et sa liste de tâches. Elles sont lues de la même façon, en lecture seule et pour lui seul.
 
 ### Usage des données
 
